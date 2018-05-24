@@ -4,11 +4,21 @@ import android.support.v7.app.AppCompatActivity
 import android.view.View
 import android.view.ViewGroup
 
-fun ViewGroup.forEachChildView(predicate: (View) -> Unit) {
+fun ViewGroup.forEachChild(predicate: (View) -> Unit) {
+    for (i in 0 until childCount) {
+        val child = getChildAt(i)
+        predicate(child)
+    }
+}
+
+fun ViewGroup.forEachChildRecursive(predicate: (View) -> Unit) {
     for (i in 0 until childCount) {
         val child = getChildAt(i)
         when (child) {
-            is ViewGroup -> child.forEachChildView(predicate)
+            is ViewGroup -> {
+                predicate(child)
+                child.forEachChildRecursive(predicate)
+            }
             else -> predicate(child)
         }
     }
