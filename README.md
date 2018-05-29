@@ -1,8 +1,27 @@
 # MitsuraKotlinUtils
 
+# v1.0.3
+## JSONObject
+
+```
+getStringDefault(key)
+```
+returns string by key, or empty if no data or data is null
+
+same for
+```
+getIntDefault(key: String) 0
+getFloatDefault(key: String) 0
+getDoubleDefault(key: String) 0
+getBooleanDefault(key: String) false
+getLongDefault(key: String) 0L
+getJSONObjectDefault(key: String) null
+getJSONArrayDefault(key: String) null
+```
+
 # v1.0.2
 
-## AppCompatActivityKt
+## AppCompatActivity
 
 ```
 hideKeyboard()
@@ -63,3 +82,4 @@ goes thru each child (out View) inside itself and call predicate over them, when
 hideKeyboardWhenClick() 
 ```
 hides keyboard(when context is AppCompatActivity)
+
