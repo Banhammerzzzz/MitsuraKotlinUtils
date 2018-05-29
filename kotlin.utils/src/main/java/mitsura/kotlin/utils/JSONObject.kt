@@ -1,5 +1,6 @@
 package mitsura.kotlin.utils
 
+import org.json.JSONArray
 import org.json.JSONObject
 
 fun JSONObject.getStringDefault(key: String): String =
@@ -22,3 +23,6 @@ fun JSONObject.getLongDefault(key: String): Long =
 
 fun JSONObject.getJSONObjectDefault(key: String): JSONObject? =
         if (!isNull(key)) getJSONObject(key) else null
+
+fun JSONObject.getJSONArrayDefault(key: String): JSONArray? =
+        if (!isNull(key)) getJSONArray(key) else null
